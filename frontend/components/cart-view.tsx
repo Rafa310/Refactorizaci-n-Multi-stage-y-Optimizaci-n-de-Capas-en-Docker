@@ -1,0 +1,5 @@
+"use client";
+import { useCart } from "@/components/cart-provider";
+import { products,money } from "@/lib/products";
+import Link from "next/link";
+export function CartView(){const {items,remove}=useCart();const total=items.reduce((s,i)=>s+(products.find(p=>p.id===i.id)?.price||0)*i.qty,0);return <div><h1 className="text-3xl font-black mb-8">Tu carrito</h1>{items.length===0?<div className="card">No hay productos todavía. <Link href="/catalogo" className="underline text-teal-700">Explorar catálogo</Link></div>:<div className="space-y-4">{items.map(i=>{const p=products.find(p=>p.id===i.id);return p?<div className="card flex justify-between items-center gap-4" key={i.id}><div><b>{p.emoji} {p.name}</b><p className="text-slate-600">Cantidad: {i.qty} · {money(p.price*i.qty)}</p></div><button className="btn btn-secondary" onClick={()=>remove(i.id)}>Quitar</button></div>:null})}<p className="text-xl font-bold text-right">Total: {money(total)}</p><div className="flex justify-end"><Link href="/checkout" className="btn">Continuar al checkout</Link></div></div>}</div>}

@@ -1,0 +1,2 @@
+import { NextResponse } from "next/server";
+export async function POST(req:Request){const input=await req.json().catch(()=>({}));const name=String(input.name||"").trim();const email=String(input.email||"").trim().toLowerCase();const password=String(input.password||"");if(name.length<2||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)||password.length<8)return NextResponse.json({error:"Datos inválidos"},{status:400});return NextResponse.json({user:{email,name},persistent:false})}

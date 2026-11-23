@@ -1,0 +1,10 @@
+.env
+.env.local
+**/.env
+**/.env.local
+**/node_modules/
+**/.next/
+**/vendor/
+**/storage/logs/*
+**/*.log
+.DS_Store

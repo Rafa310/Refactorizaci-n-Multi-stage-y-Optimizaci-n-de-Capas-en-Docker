@@ -1,0 +1,1 @@
+"use client";export default function Error({reset}:{error:Error;reset:()=>void}){return <div className="card" role="alert">No se pudo cargar el historial. <button className="btn" onClick={reset}>Reintentar</button></div>}

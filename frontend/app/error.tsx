@@ -1,0 +1,1 @@
+"use client";export default function Error({reset}:{error:Error;reset:()=>void}){return <div className="card" role="alert"><h2 className="font-bold">Ocurrió un error inesperado.</h2><button className="btn mt-4" onClick={reset}>Reintentar</button></div>}

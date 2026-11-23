@@ -1,0 +1,1 @@
+"use client";export default function Error({reset}:{error:Error;reset:()=>void}){return <div role="alert" className="card">No se pudo completar esta operación. <button className="btn" onClick={reset}>Reintentar</button></div>}

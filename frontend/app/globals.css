@@ -1,0 +1,10 @@
+@import "tailwindcss";
+:root { color-scheme: light; }
+body { background:#f8fafc; color:#0f172a; font-family:Arial,Helvetica,sans-serif; }
+button,a { transition: opacity .16s ease; }
+button:disabled { opacity:.55;cursor:not-allowed; }
+button:not(:disabled):hover,a:hover { opacity:.82; }
+.input { width:100%; padding:.7rem .85rem; border:1px solid #cbd5e1; border-radius:.65rem; background:white; }
+.btn { display:inline-flex;justify-content:center;align-items:center;gap:.45rem; border-radius:.7rem;background:#0f766e;color:white;font-weight:700;padding:.7rem 1.05rem;cursor:pointer; }
+.btn-secondary { background:#e2e8f0;color:#0f172a; }
+.card { background:white;border:1px solid #e2e8f0;border-radius:1rem;padding:1.25rem; }

@@ -1,0 +1,2 @@
+import { NextResponse } from "next/server";
+export async function POST(req:Request){const input=await req.json().catch(()=>({}));const email=String(input.email||"").trim().toLowerCase();const password=String(input.password||"");if(email!=="demo@tienda.test"||password!=="Demo12345!")return NextResponse.json({error:"Credenciales demo incorrectas"},{status:401});return NextResponse.json({user:{email,name:"Cuenta demo"}})}

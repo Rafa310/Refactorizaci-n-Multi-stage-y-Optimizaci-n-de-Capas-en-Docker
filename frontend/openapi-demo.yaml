@@ -1,0 +1,59 @@
+openapi: 3.0.3
+info:
+  title: Tienda Demo - API simulada
+  version: '1.0.0'
+  description: API interna de demostración; no es el Swagger Laravel original.
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/products:
+    get:
+      summary: Listar productos de demostración
+      responses:
+        '200':
+          description: Listado público
+  /api/auth:
+    get:
+      summary: Consultar estado de sesión ficticia
+      responses:
+        '200':
+          description: Estado de autenticación
+  /api/orders:
+    post:
+      summary: Crear orden pendiente ficticia
+      responses:
+        '200':
+          description: Orden validada
+    get:
+      summary: Obtener órdenes ficticias del usuario
+      responses:
+        '200':
+          description: Órdenes en cookie firmada
+        '401':
+          description: No autenticado
+  /api/checkout:
+    post:
+      summary: Confirmar pago ficticio
+      responses:
+        '200':
+          description: Pago simulado confirmado
+    get:
+      summary: Mostrar aviso de pago simulado
+      responses:
+        '200':
+          description: Modo demostración
+
+  /api/auth/login:
+    post:
+      summary: Validar credenciales de prueba
+      responses:
+        '200':
+          description: Usuario demo
+        '401':
+          description: Credenciales incorrectas
+  /api/auth/register:
+    post:
+      summary: Crear una sesión ficticia
+      responses:
+        '200':
+          description: Registro temporal válido
